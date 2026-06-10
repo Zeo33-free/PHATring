@@ -7,4 +7,4 @@ The soft clipping is not standard waveshaping — it’s designed for character 
 
 ## License
 
-GPLv3 (unless you own a JUCE commercial license).
+GPLv3
