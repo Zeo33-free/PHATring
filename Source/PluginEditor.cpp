@@ -190,12 +190,11 @@ void PhatringAudioProcessorEditor::resized()
     // ---------- Clip section ----------
     auto clipSection = area;
 
-    // CLIP button (left side, vertically centered on clip section)
+    // CLIP button
     clipToggle.setBounds(clipSection.getX(),
         clipSection.getY() + (clipSection.getHeight() - sc(24)) / 2,
         sc(68), sc(24));
 
-    // Three rotary knobs – centers aligned with the three sliders above
     const int knobWidth = sc(90);
     const int knobHeight = clipSection.getHeight();
 
@@ -203,11 +202,9 @@ void PhatringAudioProcessorEditor::resized()
     clipCeilKnob.setBounds(juce::roundToInt(noiseCenterX - knobWidth / 2), clipSection.getY(), knobWidth, knobHeight);
     clipSoftKnob.setBounds(juce::roundToInt(amountCenterX - knobWidth / 2), clipSection.getY(), knobWidth, knobHeight);
 
-    // ----- 标签（Thresh/Ceil/Soft）固定在旋钮正中心 -----
     auto placeLabelInCentre = [&](juce::Label& label, const juce::Slider& knob)
         {
             const int labelHeight = sc(14);
-            // 宽度与旋钮相同，高度固定，然后垂直居中放置在旋钮里
             label.setBounds(knob.getX(),
                 knob.getY() + (knob.getHeight() - labelHeight) / 2 + sc(20),
                 knob.getWidth(),
@@ -218,12 +215,12 @@ void PhatringAudioProcessorEditor::resized()
     placeLabelInCentre(clipCeilLabel, clipCeilKnob);
     placeLabelInCentre(clipSoftLabel, clipSoftKnob);
 
-    // 确保标签显示在最前面，不会被旋钮图形遮挡
+
     clipThreshLabel.toFront(false);
     clipCeilLabel.toFront(false);
     clipSoftLabel.toFront(false);
 
-    // 上方三个 slider 的数值也要置顶
+
     freqLabel.toFront(false);
     noiseLabel.toFront(false);
     amountLabel.toFront(false);
