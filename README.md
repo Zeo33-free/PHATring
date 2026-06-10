@@ -1,4 +1,4 @@
-# Doppler-Ring
+# PHATRing
 
 A JUCE-based audio plugin that sounds like Doppler distortion, but is actually a ring modulator + a unique clip algorithm.  
 It can produce dry, crisp, punchy, and even fat sounds.
